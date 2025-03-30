@@ -6,10 +6,11 @@
 }
 body, html {
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* If we keep a background color, any element with z-index < 0 goes behind this */
   color: #e0e0e0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  position: relative; /* Add this so we can have a stacking context for z-index >= 0 elements */
 }
 header {
   background: rgba(0, 0, 0, 0.9);
@@ -102,19 +103,19 @@ footer {
   background: #000;
 }
 /* Interactive Background Containers */
+/* Use z-index: 0 so they appear behind the content but above the body background */
 .bg-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0; /* was -1, changed to 0 for Safari compatibility */
   pointer-events: none;
-  /* Temporary debug border to verify visibility */
-  border: 2px dashed red;
+  border: 2px dashed red; /* Debug border to confirm the container is visible */
 }
 /* Ensure section text stays on top */
 .section-content {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* content above the background container */
 }
