@@ -9,34 +9,36 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   const width = window.innerWidth;
   const height = netSection.clientHeight;
-  
+  console.log("Network section dimensions:", width, height);
+
   const svg = d3.select('#network-bg')
     .append('svg')
     .attr('width', width)
     .attr('height', height);
 
-  // Create 100 nodes with IDs like "node-0", "node-1", ...
+  // Create 100 nodes with IDs "node-0", "node-1", …, "node-99"
   const nodeCount = 100;
   const nodes = d3.range(nodeCount).map(i => ({
     id: `node-${i}`
   }));
 
-  // Create 200 links referencing those node IDs
+  // Create 200 links referencing these nodes by their IDs
   const linkCount = 200;
   const links = d3.range(linkCount).map(() => {
     const s = Math.floor(Math.random() * nodeCount);
     const t = Math.floor(Math.random() * nodeCount);
     return {
-      source: `node-${s}`,  // match the "node-<number>" pattern
+      source: `node-${s}`,
       target: `node-${t}`
     };
   });
 
   const simulation = d3.forceSimulation(nodes)
     .force("link", d3.forceLink(links).id(d => d.id).distance(80))
-    .force("charge", d3.forceManyBody().strength(-50))
+    .force("charge", d3.forceManyBody().strength(-70))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .alphaDecay(0.05);
+    .velocityDecay(0.2)      // Lower decay for more constant motion
+    .alphaDecay(0.05);       // Slower decay for smoother transitions
 
   const linkSelection = svg.append("g")
     .attr("stroke", "#1abc9c")
@@ -87,15 +89,15 @@ document.addEventListener("DOMContentLoaded", function() {
     d.fy = null;
   }
 
-  // Responsive resize
+  // Responsive resize for the SVG container
   window.addEventListener('resize', () => {
     const newWidth = window.innerWidth;
     const newHeight = netSection.clientHeight;
     svg.attr('width', newWidth).attr('height', newHeight);
     simulation.force("center", d3.forceCenter(newWidth / 2, newHeight / 2));
     simulation.alpha(0.3).restart();
+    console.log("SVG resized to:", newWidth, newHeight);
   });
-
 
   /* ---------------- Matrix Binary Code Animation ---------------- */
   const canvas = document.getElementById("matrix-canvas");
@@ -110,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (cyberSection) {
       canvas.width = window.innerWidth;
       canvas.height = cyberSection.clientHeight;
+      console.log("Canvas resized to:", canvas.width, canvas.height);
+    } else {
+      console.error("Cybersecurity section not found!");
     }
   }
   resizeCanvas();
@@ -120,8 +125,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const drops = Array(columns).fill(1);
 
   function drawMatrix() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    // Create a vertical gradient for the background:
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0, "#1a1a2e");
+    gradient.addColorStop(1, "#000");
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     ctx.fillStyle = "#0f0";
     ctx.font = fontSize + "px monospace";
 
