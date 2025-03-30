@@ -6,14 +6,14 @@
 }
 body, html {
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #141414;
   color: #e0e0e0;
   overflow-x: hidden;
   scroll-behavior: smooth;
   position: relative;
 }
 header {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(26, 26, 46, 0.9);
   padding: 20px 40px;
   position: fixed;
   width: 100%;
@@ -103,7 +103,6 @@ footer {
   background: #000;
 }
 /* Interactive Background Containers */
-/* Remove any debug borders */
 .bg-container {
   position: absolute;
   top: 0;
