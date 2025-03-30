@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOM fully loaded");
+  console.log("DOM fully loaded - debug version");
 
   /* Interactive Network Topology Visualization (Networking Section) */
   const netSection = document.getElementById('networking');
