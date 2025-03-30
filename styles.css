@@ -1,0 +1,124 @@
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1abc9c;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #1abc9c;
+  }
+  main {
+    margin-top: 80px;
+  }
+  section {
+    padding: 100px 20px;
+    position: relative;
+    min-height: 100vh;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #1abc9c;
+  }
+  .content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .content-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease;
+  }
+  .content-card:hover {
+    transform: translateY(-10px);
+  }
+  /* Contact Form */
+  #contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #contact input, #contact textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  #contact button {
+    padding: 15px;
+    background: #1abc9c;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  #contact button:hover {
+    background: #16a085;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+  }
+  /* Interactive Background Containers */
+  .bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  /* Debug: Temporary borders (remove after confirming visibility) */
+  /* Uncomment these lines if you want to see the background containers:
+  #matrix-canvas, #network-bg {
+    border: 2px solid red;
+  }
+  */
+  /* Ensure section text stays on top */
+  .section-content {
+    position: relative;
+    z-index: 2;
+  }
