@@ -1,0 +1,236 @@
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Optional: Define CSS Variables for easier maintenance */
+/*
+:root {
+  --primary-color: #1abc9c;
+  --background-dark: #141414;
+  --text-light: #e0e0e0;
+  --header-bg: rgba(26, 26, 46, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --footer-bg: #000;
+}
+*/
+
+body, html {
+  font-family: Arial, sans-serif;
+  background-color: #141414; /* Replace with var(--background-dark) if using variables */
+  color: #e0e0e0; /* Replace with var(--text-light) */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative; /* Needed for absolute positioning of backgrounds */
+}
+
+header {
+  background: rgba(26, 26, 46, 0.9); /* Replace with var(--header-bg) */
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #1abc9c; /* Replace with var(--primary-color) */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #e0e0e0; /* Replace with var(--text-light) */
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1abc9c; /* Replace with var(--primary-color) */
+}
+
+main {
+  margin-top: 80px; /* Adjust if header height changes */
+}
+
+section {
+  padding: 100px 20px;
+  position: relative;
+  min-height: 100vh;
+  display: flex; /* Helps center section-content if needed */
+  flex-direction: column; /* Stack title and content */
+  justify-content: center; /* Vertically center content within section */
+  overflow: hidden; /* Prevent potential background overflow issues */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #1abc9c; /* Replace with var(--primary-color) */
+}
+
+/* Style for descriptive paragraphs below section titles */
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px; /* top/bottom left/right bottom */
+  padding: 0 15px; /* Add some padding on smaller screens */
+}
+
+
+.content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.05); /* Replace with var(--card-bg) */
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 300px; /* Grow, shrink, basis */
+  transition: transform 0.3s ease;
+  max-width: 400px; /* Optional: Set a max-width for general cards */
+}
+
+.content-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Specific styles for testimonial cards */
+.testimonial-card {
+  max-width: 500px; /* Max width from original inline style */
+}
+
+.testimonial-text {
+  /* Style for the main quote if needed */
+  margin-bottom: 1em;
+}
+
+.testimonial-author {
+  font-style: italic;
+  text-align: right;
+}
+
+
+/* Contact Form */
+#contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact input, #contact textarea {
+  padding: 12px 15px; /* Slightly larger padding */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.08); /* Slightly lighter background */
+  color: #e0e0e0; /* Ensure text color contrasts */
+}
+#contact input::placeholder, #contact textarea::placeholder {
+    color: rgba(224, 224, 224, 0.6); /* Lighter placeholder text */
+}
+
+
+#contact button {
+  padding: 15px;
+  background: #1abc9c; /* Replace with var(--primary-color) */
+  color: #141414; /* Dark text on light button */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact button:hover {
+  background: #16a085; /* Slightly darker shade on hover */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000; /* Replace with var(--footer-bg) */
+  color: #aaa; /* Slightly muted footer text */
+}
+
+/* Interactive Background Containers */
+.bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind section content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Ensure section text stays on top of backgrounds */
+.section-content {
+  position: relative;
+  z-index: 1;
+  width: 100%; /* Ensure it takes full width */
+  max-width: 1200px; /* Optional: Set max width for content */
+  margin: 0 auto; /* Center content */
+  padding: 0 20px; /* Add horizontal padding */
+}
+
+
+/* Accessibility helper class */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap; /* Add this for good measure */
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column; /* Stack logo and nav on small screens */
+    gap: 10px;
+  }
+  main {
+    margin-top: 120px; /* Adjust based on new header height */
+  }
+  nav ul {
+    justify-content: center; /* Center nav links */
+    flex-wrap: wrap; /* Allow nav links to wrap */
+  }
+  .section-title {
+    font-size: 2em;
+  }
+  section {
+    padding: 80px 15px;
+  }
+  .content-card {
+     flex-basis: 100%; /* Make cards full width on small screens */
+     max-width: none; /* Remove max-width limit */
+  }
+   .testimonial-card {
+     max-width: none;
+   }
+}

@@ -25,7 +25,8 @@
       <div class="bg-container" id="network-bg"></div>
       <div class="section-content">
         <h2 class="section-title">Networking Services Overview</h2>
-        <p style="text-align:center; max-width:800px; margin: auto 0 50px auto;">
+        <!-- Removed inline style, added class -->
+        <p class="section-description">
           Our comprehensive networking solutions empower your business with reliable, scalable, and efficient connectivity.
         </p>
         <div class="content-grid">
@@ -63,7 +64,8 @@
       <canvas class="bg-container" id="matrix-canvas"></canvas>
       <div class="section-content">
         <h2 class="section-title">Cybersecurity Services Overview</h2>
-        <p style="text-align:center; max-width:800px; margin: auto 0 50px auto;">
+         <!-- Removed inline style, added class -->
+        <p class="section-description">
           Protect your business with advanced cybersecurity solutions that proactively assess risks, monitor threats, and ensure compliance.
         </p>
         <div class="content-grid">
@@ -96,13 +98,17 @@
       <div class="section-content">
         <h2 class="section-title">Client Testimonials</h2>
         <div class="content-grid">
-          <div class="content-card" style="max-width: 500px;">
-            <p>"ZeroPointSec transformed our network infrastructure. Their expertise made a huge difference!"</p>
-            <p style="font-style: italic; text-align:right;">– Alex M., CEO, TechCorp</p>
+          <!-- Removed inline style, added specific class -->
+          <div class="content-card testimonial-card">
+            <p class="testimonial-text">"ZeroPointSec transformed our network infrastructure. Their expertise made a huge difference!"</p>
+            <!-- Removed inline style, added class -->
+            <p class="testimonial-author">– Alex M., CEO, TechCorp</p>
           </div>
-          <div class="content-card" style="max-width: 500px;">
-            <p>"Their cybersecurity measures gave us peace of mind in an increasingly hostile digital world."</p>
-            <p style="font-style: italic; text-align:right;">– Samantha R., CIO, FinSecure</p>
+           <!-- Removed inline style, added specific class -->
+          <div class="content-card testimonial-card">
+            <p class="testimonial-text">"Their cybersecurity measures gave us peace of mind in an increasingly hostile digital world."</p>
+            <!-- Removed inline style, added class -->
+            <p class="testimonial-author">– Samantha R., CIO, FinSecure</p>
           </div>
         </div>
       </div>
@@ -112,13 +118,23 @@
     <section id="contact">
       <div class="section-content">
         <h2 class="section-title">Contact &amp; Registration</h2>
-        <p style="text-align:center; max-width:800px; margin: auto 0 50px auto;">
+         <!-- Removed inline style, added class -->
+        <p class="section-description">
           Request a consultation, inquire about our services, or subscribe for the latest IT insights.
         </p>
         <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea rows="4" placeholder="Your Message or Inquiry"></textarea>
+          <!-- Added label for accessibility -->
+          <label for="nameInput" class="visually-hidden">Your Name</label>
+          <input type="text" id="nameInput" placeholder="Your Name" required />
+
+          <!-- Added label for accessibility -->
+          <label for="emailInput" class="visually-hidden">Your Email</label>
+          <input type="email" id="emailInput" placeholder="Your Email" required />
+
+          <!-- Added label for accessibility -->
+          <label for="messageInput" class="visually-hidden">Your Message or Inquiry</label>
+          <textarea id="messageInput" rows="4" placeholder="Your Message or Inquiry"></textarea>
+
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -127,8 +143,10 @@
   <footer>
     <p>&copy; 2025 ZeroPointSec. All rights reserved.</p>
   </footer>
+
   <!-- Load D3.js from CDN -->
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="index.js"></script>
+  <!-- Load local script with defer -->
+  <script src="index.js" defer></script>
 </body>
 </html>
