@@ -1,175 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZeroPointSec – Elite IT Services</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Vis.js for interactive network topology -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
-</head>
-<body>
-  <!-- Header / Navigation -->
-  <header>
-    <nav>
-      <div class="logo">ZeroPointSec</div>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#networking">Networking</a></li>
-        <li><a href="#cybersecurity">Cybersecurity</a></li>
-        <li><a href="#infrastructure">Infrastructure</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="hero">
-    <!-- Spline Animation as Background -->
-    <div class="hero-background">
-      <iframe
-        src="https://my.spline.design/particles-295da74e2569f34fb4428bbd4b9455d5/"
-        frameborder="0"
-        width="100%"
-        height="100%"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="hero-content">
-      <h1 class="tagline">Secure Your Digital Future</h1>
-      <p class="intro">
-        A full-spectrum IT services firm delivering advanced solutions in networking,
-        cybersecurity, and systems architecture — designed for performance, resilience,
-        and scalability.
-      </p>
-      <div class="cta-buttons">
-        <button id="scheduleBtn">Schedule Consultation</button>
-        <button id="exploreBtn">Explore Services</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Networking Services Section -->
-  <section id="networking">
-    <div class="section-content">
-      <h2>Networking Services</h2>
-      <p>
-        Enterprise Network Design, Switching & Routing Optimization, Multi-site Integration,
-        Firewall & Perimeter Defense, Fiber Optics & Infrastructure, Structured Cabling Systems.
-      </p>
-    </div>
-    <div id="networkCanvasContainer">
-      <div id="networkGraph"></div>
-    </div>
-  </section>
-
-  <!-- Cybersecurity Services Section -->
-  <section id="cybersecurity">
-    <div class="section-content">
-      <h2>Cybersecurity Services</h2>
-      <p>
-        Risk & Vulnerability Management, Threat Monitoring & SIEM Integration, Incident Response
-        & Recovery, Security Policy & Governance, Compliance Guidance.
-      </p>
-    </div>
-    <canvas id="matrixCanvas"></canvas>
-  </section>
-
-  <!-- On-Premises & Cloud Infrastructure Section -->
-  <section id="infrastructure">
-    <!-- Spline Animation as Background -->
-    <div class="infrastructure-background">
-      <iframe
-        src="https://my.spline.design/particles-295da74e2569f34fb4428bbd4b9455d5/"
-        frameborder="0"
-        width="100%"
-        height="100%"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="section-content">
-      <h2>On-Premises & Cloud Infrastructure Solutions</h2>
-      <p>
-        On-Premise Solutions, Cloud Solutions, System Administration & Support, Backup & Continuity.
-      </p>
-    </div>
-  </section>
-
-  <!-- Client Testimonials Section -->
-  <section id="testimonials">
-    <div class="section-content">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial">
-          <blockquote>
-            "ZeroPointSec overhauled our entire network and reduced latency by 60% — a transformative impact for our real-time operations."
-          </blockquote>
-          <p class="attribution">— CTO, LogisticsTech</p>
-        </div>
-        <div class="testimonial">
-          <blockquote>
-            "From day one, we felt our digital assets were in good hands. Their security audits uncovered gaps even our previous partner missed."
-          </blockquote>
-          <p class="attribution">— COO, FinServe Group</p>
-        </div>
-        <div class="testimonial">
-          <blockquote>
-            "Their team handled both on-prem and cloud with impressive agility. Everything works — no excuses, no delays."
-          </blockquote>
-          <p class="attribution">— IT Director, MedCore</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Consultation Section -->
-  <section id="contact">
-    <div class="section-content">
-      <h2>Let’s Build Your Secure Infrastructure</h2>
-      <p>Schedule your free consultation today.</p>
-      <form id="contactForm">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" name="fullName" required />
-
-        <label for="companyName">Company Name</label>
-        <input type="text" id="companyName" name="companyName" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="serviceInterest">Service Interest</label>
-        <select id="serviceInterest" name="serviceInterest">
-          <option value="networking">Networking</option>
-          <option value="cybersecurity">Cybersecurity</option>
-          <option value="cloud">Cloud Solutions</option>
-          <option value="general">General Inquiry</option>
-        </select>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message"></textarea>
-
-        <div class="checkbox">
-          <input type="checkbox" id="newsletter" name="newsletter" />
-          <label for="newsletter">Yes, send me cybersecurity tips and updates</label>
-        </div>
-
-        <button type="submit">Request Consultation</button>
-      </form>
-      <div id="contactConfirmation" class="hidden">
-        Thank you! We’ll contact you within 24 hours.
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>Contact us: email@example.com | +1 234 567 890</p>
-      <p>© 2025 ZeroPointSec. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BG Diplomat Limo offers premium chauffeur and luxury car rental services in Belgrade. Professional drivers, luxurious vehicles, and exceptional service." />
+    <meta name="theme-color" content="#000000" />
+    <title>BG Diplomat Limo - Luxury Chauffeur Service in Belgrade</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="/images/hero-preview.jpg">
+    <script type="module" crossorigin src="./assets/index-7RCeZtl7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B96j4r6z.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Defer non-critical scripts -->
+    <script>
+      // Defer loading of non-critical resources
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const scripts = [
+            // Add any third-party scripts here
+          ];
+          
+          scripts.forEach(function(src) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            document.body.appendChild(script);
+          });
+        }, 2000);
+      });
+    </script>
+  </body>
 </html>
