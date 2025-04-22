@@ -1,0 +1,1 @@
+import{j as s}from"./index-1NSynUhw.js";import{W as r}from"./WhoWeAre-NhfpefNh.js";const e=()=>s.jsx("div",{className:"pt-20",children:s.jsx("div",{className:"max-w-7xl mx-auto px-4 py-20",children:s.jsx(r,{})})});export{e as default};
