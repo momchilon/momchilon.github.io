@@ -1,1 +1,0 @@
-import{j as s}from"./index-CcheJ_pD.js";const r=()=>s.jsx("div",{className:"pt-20",children:s.jsxs("div",{className:"max-w-7xl mx-auto px-4 py-20",children:[s.jsx("h1",{className:"text-4xl font-serif mb-8",children:"Our Services"}),s.jsx("p",{className:"text-gray-300",children:"Content coming soon..."})]})});export{r as default};
